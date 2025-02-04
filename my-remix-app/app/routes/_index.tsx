@@ -1,6 +1,7 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
+import { Form, useActionData } from "@remix-run/react";
 
-import Nav from "~/components/navbar";
+import { Button } from "~/components/ui/button";
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
@@ -10,10 +11,14 @@ export const meta: MetaFunction = () => {
 
 
 export default function Index() {
+  
   return (
-    <div className="  border border-white  rounded-lg">
-    
+    <div className="border border-white  rounded-lg">
+      <Form method="post">
+        <Button type="submit">Google</Button>
+      </Form>
       
     </div>
   );
 }
+
